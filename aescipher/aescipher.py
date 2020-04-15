@@ -1,4 +1,3 @@
-import hashlib
 from Crypto import Random
 from Crypto.Cipher import AES
 from omnitools import sha256d, str_or_bytes, b64e, b64d, try_utf8e, try_utf8d
