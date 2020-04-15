@@ -1,7 +1,7 @@
 import hashlib
 from Crypto import Random
 from Crypto.Cipher import AES
-from omnitools import *
+from omnitools import sha256d, str_or_bytes, b64e, b64d, try_utf8e, try_utf8d
 
 
 __ALL__ = ["AESCipher"]
@@ -9,7 +9,7 @@ __ALL__ = ["AESCipher"]
 
 class AESCipher(object):
     def __init__(self, key: str_or_bytes) -> None:
-        self.key = hashlib.sha3_256(try_utf8e(key)).digest()
+        self.key = sha256d(key)
 
     def encrypt(self, raw: str_or_bytes) -> str:
         raw = try_utf8e(self.__pad(raw))
