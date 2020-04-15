@@ -1,4 +1,4 @@
-version = "2.1.1"
+version = "2.2.0"
 keywords = ["aes cipher"]
 entry = "test:main"
 
@@ -11,5 +11,5 @@ if not version.endswith(".0"):
     os._exit(1)
 
 
-from .aescipher import *
+from .core import *
 

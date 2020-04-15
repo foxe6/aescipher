@@ -10,9 +10,9 @@ def main() -> None:
     content = sys.argv[3]
     cipher = AESCipher(key)
     if command == "e":
-        p(cipher.encrypt(content))
+        print(cipher.encrypt(content), flush=True)
     elif command == "d":
-        p(cipher.decrypt(content))
+        print(cipher.decrypt(content), flush=True)
     else:
         exit(1)
     exit(0)
