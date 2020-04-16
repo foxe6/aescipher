@@ -8,24 +8,21 @@ __ALL__ = ["AESCipher"]
 
 class AESCipher(object):
     def __init__(self, key: str_or_bytes) -> None:
-        self.key = sha256d(key)
+        self.__cipher = lambda iv: AES.new(sha256d(key), AES.MODE_CBC, iv)
 
     def encrypt(self, raw: str_or_bytes) -> str:
         raw = try_utf8e(self.__pad(raw))
         iv = Random.new().read(AES.block_size)
-        cipher = AES.new(self.key, AES.MODE_CBC, iv)
-        return b64e(iv + cipher.encrypt(raw))
+        return b64e(iv + self.__cipher(iv).encrypt(raw))
 
     def decrypt(self, enc: str) -> str_or_bytes:
         enc = b64d(enc)
         iv = enc[:AES.block_size]
-        cipher = AES.new(self.key, AES.MODE_CBC, iv)
-        return try_utf8d(self.__unpad(cipher.decrypt(enc[AES.block_size:])))
+        return try_utf8d(self.__unpad(self.__cipher(iv).decrypt(enc[AES.block_size:])))
 
     @staticmethod
     def __pad(s: str_or_bytes) -> str_or_bytes:
         gap = AES.block_size - len(s) % AES.block_size
-        char = ""
         if isinstance(s, bytes):
             char = bytes(bytearray.fromhex(format(gap, "x").zfill(2)))
         else:

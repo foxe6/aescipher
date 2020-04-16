@@ -1,4 +1,4 @@
-__version__ = "2.3.0"
+__version__ = "2.4.0"
 __keywords__ = ["aes cipher"]
 __entry__ = "test:main"
 

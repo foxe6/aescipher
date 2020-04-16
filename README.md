@@ -32,10 +32,3 @@ print(ciphertext)
 print(plaintext == AESCipher(key).decrypt(ciphertext))
 # True
 ```
-
-## shell
-```shell script
-rem aescipher.exe {e|d} <key> {<plaintext in string>|<ciphertext in b64>}
-aescipher.exe e "abc" "abc"
-aescipher.exe d "abc" "ZxFrL1kMlMc/7TWrMiSS3gyZCikhvVhoXxChFdKKlf0="
-```

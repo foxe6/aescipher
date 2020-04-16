@@ -18,7 +18,7 @@ open("README.md", "wb").write(readme.encode("utf-8"))
 description = re.search(r"<i>(.*?)</i>", readme)[1]
 setup(
     name="aescipher",
-    version="2.3.0",
+    version="2.4.0",
     keywords=["aes cipher"],
     packages=find_packages(),
     url="https://github.com/foxe6/aescipher",
