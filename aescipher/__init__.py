@@ -1,6 +1,5 @@
-__version__ = "2.4.0"
+__version__ = "2.4.1"
 __keywords__ = ["aes cipher"]
-__entry__ = "test:main"
 
 
 if not __version__.endswith(".0"):

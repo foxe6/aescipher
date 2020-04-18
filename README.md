@@ -8,7 +8,7 @@
 [![made](https://img.shields.io/badge/Made%20with-PyCharm-red.svg)](https://paypal.me/foxe6)
 </badges>
 
-<i>Use AES-256 to encrypt everything with ease!</i>
+<i>Use AES to encrypt everything with ease!</i>
 
 # Hierarchy
 
